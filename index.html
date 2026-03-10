@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ukah-Columba Chinaza Howard — Developer & Researcher</title>
+    <meta name="description"
+        content="Portfolio of Ukah-Columba Chinaza Howard, an aspiring technologist specialising in AI, software development, and data-driven solutions." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <span class="nav-logo">UKAH-COLUMBA CHINAZA HOWARD </span>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#research">RESEARCH</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══ PORTFOLIO (rendered by app.js) ═══ -->
+    <div id="portfolio"></div>
+
+    <!-- ═══ PDF VIEWER MODAL (PDF.js) ═══ -->
+    <div class="pdf-overlay" id="pdfOverlay">
+        <div class="pdf-header">
+            <h3 id="pdfTitle">DOCUMENT VIEWER</h3>
+            <div class="pdf-nav">
+                <button class="pdf-nav-btn" id="pdfPrev" onclick="pdfPrevPage()">← PREV</button>
+                <span id="pdfPageInfo" class="pdf-page-info">— / —</span>
+                <button class="pdf-nav-btn" id="pdfNext" onclick="pdfNextPage()">NEXT →</button>
+            </div>
+            <button class="pdf-close" onclick="closePDF()">✕ CLOSE</button>
+        </div>
+        <div class="pdf-frame-wrap" id="pdfContainer">
+            <div id="pdfCanvasWrap">
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+        </div>
+        <p class="pdf-notice">🔒 Secured viewer — right-click disabled</p>
+    </div>
+
+    <!-- ═══ PDF.js CDN ═══ -->
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
