@@ -24,7 +24,7 @@ const DATA = {
     tools: ["Git", "Firebase", "LaTeX", "AWS Cloud"]
   },
   projects: [
-    { title: "POLYDUB (AI REAL TIME LANGUAGE TRANSLATION)", desc: "A mobile application that translates and dubs speech in real time, making videos and audio on Android phones free from language barriers. Built using Vosk engine and Google's ML Kit Translation models.", tags: ["ANDROID", "AI", "KOTLIN", "ML KIT"], color: "accent", link: "#", pdf: "" },
+    { title: "POLYDUB (AI REAL TIME LANGUAGE TRANSLATION)", desc: "A mobile application that translates and dubs speech in real time, making videos and audio on Android phones free from language barriers. Built using Vosk engine and Google's ML Kit Translation models.", tags: ["ANDROID", "AI", "KOTLIN", "ML KIT"], color: "accent", link: "#", pdf: "POLYDUB_reasearch paper.pdf" },
     { title: "CROWDSOURCED CIVIC ISSUE REPORTING SYSTEM", desc: "A civic technology platform designed to bridge the gap between citizens and local authorities, allowing users to report everyday civic problems directly from their devices with location and image support.", tags: ["CIVIC TECH", "WEB", "MOBILE"], color: "secondary", link: "#", pdf: "CIVICFIX.pdf" }
   ],
   certifications: [
@@ -162,10 +162,10 @@ function renderProjects() {
   const cards = DATA.projects.map(p => `
     <div class="project-card" style="border-color:${BORDER_CSS[p.color] || BORDER_CSS.primary}">
       <div class="proj-header">
-        <h3 style="font-size:1.125rem;font-weight:600;color:${COLOR_CSS[p.color] || COLOR_CSS.primary}">${p.title}</h3>
+        <h3 style="flex:1;margin-right:1rem;font-size:1.125rem;font-weight:600;color:${COLOR_CSS[p.color] || COLOR_CSS.primary}">${p.title}</h3>
         ${p.pdf
-      ? `<button onclick="openPDF('${p.pdf}','${p.title} \u2014 REPORT')" style="background:none;border:1px solid ${BORDER_CSS[p.color] || BORDER_CSS.primary};color:${COLOR_CSS[p.color] || COLOR_CSS.primary};border-radius:.375rem;padding:.25rem .625rem;font-family:var(--fh);font-size:.55rem;letter-spacing:.1em;cursor:pointer">VIEW REPORT \u2197</button>`
-      : p.link && p.link !== '#' ? `<a href="${p.link}" target="_blank" rel="noopener" style="color:var(--primary)">&#x2197;</a>` : ''
+      ? `<button onclick="openPDF('${p.pdf}','${p.title} \u2014 REPORT')" style="flex-shrink:0;white-space:nowrap;background:none;border:1px solid ${BORDER_CSS[p.color] || BORDER_CSS.primary};color:${COLOR_CSS[p.color] || COLOR_CSS.primary};border-radius:.375rem;padding:.25rem .625rem;font-family:var(--fh);font-size:.55rem;letter-spacing:.1em;cursor:pointer">VIEW REPORT \u2197</button>`
+      : p.link && p.link !== '#' ? `<a href="${p.link}" target="_blank" rel="noopener" style="flex-shrink:0;color:var(--primary)">&#x2197;</a>` : ''
     }
       </div>
       <div class="proj-tags">${(p.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}</div>
