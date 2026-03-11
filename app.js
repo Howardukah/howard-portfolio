@@ -4,34 +4,38 @@
 const DATA = {
   hero: {
     name: "UKAH-COLUMBA CHINAZA HOWARD",
-    subtitle: "Business Intelligence Analyst Professional-In-Training",
-    bio: "An aspiring technologist and researcher with strong interests in artificial intelligence, data analysis, and software development. Building intelligent systems and digital solutions aimed at solving real-world problems and improving information accessibility.",
+    subtitle: "Business Intelligence Analyst",
+    bio: "A B.Tech Information Technology graduate with a specialized focus on transforming complex data into actionable business intelligence, bridging the gap between raw infrastructure and strategic decision-making.",
     photo: "profile p.jpeg",
     cv: "CV.pdf"
   },
   about: {
-    para1: "Ukah-Columba Chinaza Howard is a B.Tech Information Technology student at Marwadi University, driven by a passion for building technology that makes a meaningful difference. His work spans web development, mobile applications, and machine learning — with a particular focus on intelligent systems that improve how people access and interact with information.",
-    para2: "Beyond coursework, Howard actively pursues research in artificial intelligence and natural language processing, exploring how data-driven approaches can address civic challenges and enhance digital safety.",
-    eduPeriod: "2022 — 2026",
-    eduDegree: "BACHELOR OF TECHNOLOGY",
+    para1: "A B.Tech Information Technology graduate from Marwadi University with a specialized focus on transforming complex data into actionable business intelligence. By integrating a strong foundation in SQL and Python with advanced certifications in AWS Cloud and Machine Learning, I bridge the gap between raw infrastructure and strategic decision-making.",
+    para2: "I am committed to leveraging analytical models and intelligent systems to optimize organizational efficiency and drive data-backed growth. Outside of work, I volunteer at the Rajkot India Blood Donation Camp.",
+    eduPeriod: "30/09/2022 – 12/02/2026",
+    eduDegree: "B.TECH INFORMATION TECHNOLOGY",
     eduSchool: "Marwadi University",
-    focus: ["Artificial Intelligence & ML", "Civic Technology", "Data-Driven Systems", "Mobile & Web Development"]
+    focus: ["Software Development (Android/Kotlin/Java)", "Data Science & Artificial Intelligence (Python)", "Web & Backend Technologies (Node.js/HTML/CSS)", "Database & Cloud Management (SQL)"]
   },
   skills: {
-    languages: ["Kotlin", "Java", "Python", "JavaScript", "SQL"],
-    frontend: ["Android", "HTML/CSS"],
+    languages: ["Kotlin", "Java", "Python", "JavaScript", "SQL", "English (C2)", "Igbo (Native)"],
+    frontend: ["Android Development", "HTML/CSS"],
     backend: ["Node.js", "Pandas", "NumPy", "NLP", "Machine Learning"],
-    tools: ["Git", "Firebase"]
+    tools: ["Git", "Firebase", "LaTeX", "AWS Cloud"]
   },
   projects: [
-    { title: "TOXIC SHIELD", desc: "A toxic content moderation system built using machine learning techniques to detect and filter harmful or abusive content online.", tags: ["MACHINE LEARNING", "NLP", "PYTHON"], color: "accent", link: "#", pdf: "POLYDUB_reasearch paper.pdf" },
-    { title: "CIVIC FIX", desc: "A civic technology platform designed to help citizens report local infrastructure or community issues.", tags: ["CIVIC TECH", "WEB", "MOBILE"], color: "secondary", link: "#", pdf: "CIVICFIX.pdf" }
+    { title: "POLYDUB (AI REAL TIME LANGUAGE TRANSLATION)", desc: "A mobile application that translates and dubs speech in real time, making videos and audio on Android phones free from language barriers. Built using Vosk engine and Google's ML Kit Translation models.", tags: ["ANDROID", "AI", "KOTLIN", "ML KIT"], color: "accent", link: "#", pdf: "" },
+    { title: "CROWDSOURCED CIVIC ISSUE REPORTING SYSTEM", desc: "A civic technology platform designed to bridge the gap between citizens and local authorities, allowing users to report everyday civic problems directly from their devices with location and image support.", tags: ["CIVIC TECH", "WEB", "MOBILE"], color: "secondary", link: "#", pdf: "CIVICFIX.pdf" }
+  ],
+  certifications: [
+    { title: "Python for Data Science", issuer: "Infosys Springboard", date: "05/08/2025", desc: "Covers Python fundamentals, data analysis, and visualization for data science applications. Mode: Online", color: "primary" },
+    { title: "Android Basics with Compose", issuer: "Google", date: "10/04/2025", desc: "Building Android apps using Kotlin and Jetpack Compose, Material Design, Room, and networking. Mode: Online", color: "accent" },
+    { title: "Database Programming with SQL", issuer: "Oracle Academy", date: "29/09/2023", desc: "Database Programming with SQL. Mode: Online", color: "secondary" },
+    { title: "NDG Linux Essentials", issuer: "Cisco Academy", date: "27/02/2024", desc: "Fundamental Linux command-line skills, file management, and open-source concepts. Mode: Online", color: "pink" },
+    { title: "LaTeX Unleashed", issuer: "Hybrid", date: "29/03/2025", desc: "Hands-on training for technical writing and creating professional documentation. Mode: Hybrid", color: "primary" }
   ],
   research: [
-    { title: "ARTIFICIAL INTELLIGENCE", desc: "Exploring ML models for classification, prediction, and intelligent automation in real-world applications.", color: "primary" },
-    { title: "NATURAL LANGUAGE PROCESSING", desc: "Investigating text analysis, sentiment detection, and content moderation through computational linguistics.", color: "accent" },
-    { title: "INTELLIGENT SYSTEMS", desc: "Designing adaptive systems that learn from user behavior to deliver personalized, context-aware experiences.", color: "secondary" },
-    { title: "DATA-DRIVEN PLATFORMS", desc: "Building platforms that leverage data pipelines and analytics to enable informed decision-making at scale.", color: "pink" }
+    { title: "ACTIVE RESEARCH", desc: "Additional experimental projects and research in intelligent systems and data-driven platforms are currently in development.", color: "primary" }
   ],
   contact: [
     { icon: "✉", label: "EMAIL", value: "howardukah@gmail.com", href: "mailto:howardukah@gmail.com" },
@@ -52,7 +56,7 @@ const BORDER_CSS = { primary: "hsla(236,100%,72%,.3)", accent: "hsla(175,70%,45%
 // =====================================================
 function renderAll() {
   document.getElementById('portfolio').innerHTML =
-    renderHero() + renderAbout() + renderSkills() + renderProjects() + renderResearch() + renderContact();
+    renderHero() + renderAbout() + renderSkills() + renderProjects() + renderCertifications() + renderResearch() + renderContact();
 }
 
 function renderHero() {
@@ -177,6 +181,23 @@ function renderProjects() {
         <h3 class="cpk" style="font-size:.875rem;font-weight:600;margin-bottom:.5rem">ONGOING RESEARCH PROJECTS</h3>
         <p class="text-muted">Additional experimental projects in intelligent systems and data-driven platforms are currently in development.</p>
       </div>
+    </div>
+  </section>`;
+}
+
+function renderCertifications() {
+  const cards = DATA.certifications.map(c => `
+    <div class="research-card">
+      <h3 style="font-size:.75rem;letter-spacing:.2em;margin-bottom:.5rem;color:${COLOR_CSS[c.color] || COLOR_CSS.primary}">${c.title}</h3>
+      <p class="text-muted" style="font-size:.75rem;margin-bottom:.5rem"><strong>${c.issuer}</strong> • ${c.date}</p>
+      <p class="text-muted">${c.desc}</p>
+    </div>`).join('');
+  return `
+  <section id="certifications" class="section">
+    <div class="section-inner">
+      <h2 class="section-title"><span class="grad-text">CERTIFICATIONS</span></h2>
+      <div class="section-bar" style="background:var(--grad-a)"></div>
+      <div class="research-grid">${cards}</div>
     </div>
   </section>`;
 }
