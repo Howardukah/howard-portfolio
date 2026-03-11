@@ -715,3 +715,61 @@ a {
   background: var(--muted);
   color: var(--primary)
 }
+
+/* =====================================================
+   MOBILE RESPONSIVENESS
+===================================================== */
+@media (max-width: 768px) {
+
+  /* Navigation */
+  .nav-inner {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+  }
+
+  /* Core Layout Grids */
+  .about-grid,
+  .projects-grid,
+  .research-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Spacing Adjustments */
+  .section {
+    padding-top: 8rem;
+    /* Account for taller stacked nav */
+    padding-bottom: 2rem;
+  }
+
+  /* Hero Adjustments */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  /* Timeline Adjustments */
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .tl-dot {
+    left: -1.4rem;
+  }
+}
