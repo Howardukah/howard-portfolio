@@ -41,7 +41,7 @@ const DATA = {
     { icon: "✉", label: "EMAIL", value: "howardukah@gmail.com", href: "mailto:howardukah@gmail.com" },
     { icon: "📞", label: "PHONE", value: "+234 8105531826", href: "tel:+2348105531826" },
     { icon: "⌨", label: "GITHUB", value: "Howardukah", href: "https://github.com/Howardukah" },
-    { icon: "🔗", label: "LINKEDIN", value: "Howard Ukah", href: "https://www.linkedin.com/in/howard-ukah-237810269" }
+    { icon: "🔗", label: "LINKEDIN", value: "Howard Ukah", href: "https://www.linkedin.com/in/engr-howard-ukah-237810269" }
   ]
 };
 
